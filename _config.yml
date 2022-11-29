@@ -29,32 +29,55 @@ exclude:
 # 3. Gem settings
 
 # 4. Jekyll settings
-quiet: false
+compress_html:
+  clippings: all
+  comments:
+  ignore:
+    envs: []
+  blanklines: true
+  profile: false
+#quiet: false
+#verbose: false
 timezone: America/Toronto # Timezone for blog posts and alike
-verbose: false
+sass:
+  sass_dir: "sites"
+
 
 # 5. Collections
+#
+# Collections
+collections:
+  wetboew-demos:
+    output: true
+#    permalink: /wet-boew-demos/:name
+
 
 # 6. Jekyll collections settings
 
 # 7. Site settings
 title: "GCWeb Jekyll TEST" # Site name or title
 remote_theme: wet-boew/gcweb-jekyll
+website: "https://nrcan.github.io/nuclear-waste-consortium/" # URL of your public facing website
 
 analytics_adobe: ""
 assets: "https://wet-boew.github.io/themes-dist"
 baseurl: ""
 description:
-  en: "Jekyll variant for GCWeb theme" # English site description and default description
-  fr: "Adaption Jekyll du theme GCWeb" # French site description and default description
+  en: "NRCan Jekyll variant for GCWeb theme" # English site description and default description
+  fr: "RNCan Adaption Jekyll du theme GCWeb" # French site description and default description
+global:
+  lang: fr
+  feedbackPath:
+    en: "https://contact-contactez.nrcan-rncan.gc.ca/index.cfm?st=-1&cat=-1&scat=-1&lang=eng"
+    fr: "https://contact-contactez.nrcan-rncan.gc.ca/index.cfm?st=-1&cat=-1&scat=-1&lang=fra"
 
+#
+# Page front matter defaults
 defaults:
-  -
-    scope:
-      path: ""
-      type: pages
+  - scope:
+      path: "" # Ensure it's applied to all pages
     values:
       layout: default
-      share: false
-      sitemenu: true
-      sitesearch: false
+    css:
+      - href: https://use.fontawesome.com/releases/v5.8.1/css/all.css
+        integrity: sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf      
