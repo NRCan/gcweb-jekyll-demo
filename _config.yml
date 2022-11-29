@@ -57,7 +57,7 @@ collections:
 # 7. Site settings
 title: "GCWeb Jekyll TEST" # Site name or title
 remote_theme: wet-boew/gcweb-jekyll
-website: "https://nrcan.github.io/nuclear-waste-consortium/" # URL of your public facing website
+website: "https://nrcan.github.io/gcweb-jekyll-demo/" # URL of your public facing website
 
 analytics_adobe: ""
 assets: "https://wet-boew.github.io/themes-dist"
