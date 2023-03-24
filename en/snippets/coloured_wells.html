@@ -1,0 +1,79 @@
+---
+title: Coloured Wells
+altLangPage: /fr/snippets/
+dateModified: 2023-03-24
+layout: default
+language: en
+breadcrumbs:
+  - nrcan:
+    title: Natural Resources Canada
+    link: https://www.nrcan.gc.ca/home
+  - home:
+    title: Jekyl Site
+    link: /en/
+  - home:
+    title: Snippets
+    link: /en/snippets/
+---
+<p>
+Select the type of well:
+	<select name="well_type" id ="well_type">
+		<option value ="well bg-success" selected>bg-success</option>
+		<option value="well bg-info">bg-info</option>
+		<option value="well bg-warning">bg-warning</option>
+		<option value="well bg-danger">bg-danger</option>
+		<option value="well bg-primary">bg-primary</option>
+		<option value="well bg-dark">bg-dark</option>
+		<option value="well bg-darker">bg-darker</option>
+		<option value="well bg-ltgrey">bg-ltgrey</option>
+		<option value="well bg-dkgrey">bg-dkgrey</option>
+		<option value="well bg-white">bg-white</option>
+	</select>
+</p>
+
+<p>
+Select padding:
+	<select name="pads" id="pads">
+		<option value="">no class</option>
+		<option value="well-sm">well-sm</option>
+		<option value="well-lg">well-lg</option>
+		<option value="clean-well">clean-well</option>
+	</select>
+</p>
+
+<p>
+	Select Text Size:
+		<select name="fs" id="fs">
+			<option value="">default</option>
+			<option value="small">small</option>
+		</select>
+</p>
+
+<p>
+	Select Border:
+		<select name="brdr" id="brdr">
+			<option value="">default</option>
+			<option value="brdr-0">No Border</option>
+		</select>
+</p>
+
+<p>Class: <span id="wellsname" style="font-weight: bold;"></span></p>
+	
+<script>
+	window.onload = function() {
+		
+		$("select").change(function(){
+			var well_type = $('#well_type option:selected').val();
+			var pads = $('#pads option:selected').val();
+			var fs = $('#fs option:selected').val();
+			var brdr = $('#brdr option:selected').val();
+			$('.well').removeClass().addClass(well_type).addClass(pads).addClass(fs).addClass(brdr);
+			$('#wellsname').text(well_type + " " + pads + " " + fs + " " + brdr)
+		}).trigger('change');
+	}
+</script>
+
+	<div id = "test" class="well bg-success">
+			<h3 class="mrgn-tp-sm well-text">This is a <span id="wellsname1">bg-success</span> well</h3>
+			<p>Integer feugiat scelerisque varius morbi enim nunc faucibus a. Fermentum et sollicitudin ac orci phasellus egestas. Ut porttitor leo a diam sollicitudin tempor id eu. Vel eros donec ac odio tempor orci. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. <a class="well-link" href="#">Morbi tincidunt augue interdum </a>velit euismod in pellentesque massa. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Non enim praesent elementum facilisis leo vel fringilla est. Amet justo donec enim diam vulputate.</p>
+</div>

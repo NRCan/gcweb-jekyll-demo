@@ -61,15 +61,41 @@ website: "https://nrcan.github.io/gcweb-jekyll-demo/" # URL of your public facin
 
 analytics_adobe: ""
 assets: "https://wet-boew.github.io/themes-dist"
-baseurl: ""
+baseurl: "/gcweb-jekyll-demo"
+production_url : https://nrcan.github.io/gcweb-jekyll-demo
+BASE_PATH : https://nrcan.github.io/gcweb-jekyll-demo
 description:
   en: "NRCan Jekyll variant for GCWeb theme" # English site description and default description
   fr: "RNCan Adaption Jekyll du theme GCWeb" # French site description and default description
 global:
-  lang: fr
   feedbackPath:
-    en: "https://contact-contactez.nrcan-rncan.gc.ca/index.cfm?st=-1&cat=-1&scat=-1&lang=eng"
-    fr: "https://contact-contactez.nrcan-rncan.gc.ca/index.cfm?st=-1&cat=-1&scat=-1&lang=fra"
+    en: "https://wet-boew.github.io/GCWeb/sites/feedback/ajax/report-problem-en.html"
+    fr: "https://wet-boew.github.io/GCWeb/sites/feedback/ajax/report-problem-fr.html"
+  contextualFooter: # Contextual footer settings
+    title:
+      en: "Natural Resources Canada"
+      fr: "Contactez-nous"
+    links: # List of links visible in the support footer
+      en:
+        - text: "Contact NRCan"
+          url: "http://contact-contactez.nrcan-rncan.gc.ca/index.cfm?lang=eng"
+        - text: "News"
+          url: "https://www.canada.ca/en/news/advanced-news-search/news-results.html?typ=newsreleases&dprtmnt=naturalresourcescanada&start=&end="
+        - text: "Careers"
+          url: "https://natural-resources.canada.ca/careers"
+      fr:
+        - text: "Contacter RNCan"
+          url: "https://contact-contactez.nrcan-rncan.gc.ca/index.cfm?lang=fra"
+        - text: "Communiqués de presse"
+          url: "https://www.canada.ca/fr/nouvelles/recherche-avancee-de-nouvelles/resultats-de-nouvelles.html?typ=newsreleases&dprtmnt=naturalresourcescanada&mnstr=&start=&end="
+        - text: "Carrières"
+          url: "https://ressources-naturelles.canada.ca/carrieres"
+  termsUrl:
+    en: "https://natural-resources.canada.ca/terms-and-conditions/10847"
+    fr: "https://ressources-naturelles.canada.ca/avis/10848"
+  privacyUrl:
+    en: "https://www.canada.ca/en/transparency/privacy.html"
+    fr: "https://www.canada.ca/fr/transparence/confidentialite.html"
 
 #
 # Page front matter defaults
@@ -77,7 +103,14 @@ defaults:
   - scope:
       path: "" # Ensure it's applied to all pages
     values:
+      #noFooterContextual: true # turn off the contextual menu
+      #noFooterMain : true      # turn off the main blue menu
+      #noFooterCorporate: true  # turn off links in the footer grey menu (except T&C, Privacy)
       layout: default
-    css:
-      - href: https://use.fontawesome.com/releases/v5.8.1/css/all.css
-        integrity: sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf      
+      css:
+        - href: https://natural-resources.canada.ca/sites/all/themes/canadaca/css/nrcan.css
+      #  - href: https://use.fontawesome.com/releases/v5.15.4/css/all.css
+      #    integrity: sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm   
+      script:
+        - href: https://use.fontawesome.com/releases/v5.15.4/js/all.js
+          integrity: sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc

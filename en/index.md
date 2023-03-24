@@ -3,16 +3,15 @@ title: NRCan Jekyll Test
 altLangPage: /fr/
 dateModified: 2022-11-08
 description: "Home page describing all the components of the Canada.ca theme, named GCWeb."
-layout: no-container
+layout: home
 language: en
 breadcrumbs:
+  - canada:
+    title: Canada.ca
+    link: https://www.canada.ca/en.html
   - nrcan:
     title: Natural Resources Canada
     link: https://www.nrcan.gc.ca/home
-  - oee:
-    title: Energy Efficiency
-    link: https://www.nrcan.gc.ca/energy-efficiency/10832
-
 ---
 
 {::nomarkdown}
@@ -48,8 +47,6 @@ breadcrumbs:
 	</div>
 </div>
 
-
-
 <h2>Green buildings by 2050</h2>
 
 <p>To protect our environment and reduce the impacts of climate change, the Government of Canada has committed to reducing Canada’s total GHG emissions to <a href="https://www.canada.ca/en/environment-climate-change/news/2021/04/canadas-enhanced-nationally-determined-contribution.html">40 to 45% below 2005 levels by 2030</a> and to reaching net-zero by 2050. As the <strong>buildings sector is the third-largest source of emissions in Canada</strong>, prioritizing decarbonization, i.e. reducing or ending emissions into the atmosphere, is key to meeting our objectives. However, achieving net-zero emissions in buildings by 2050 will require overcoming several significant challenges.</p><div class="row wb-eqht wb-init">
@@ -82,8 +79,6 @@ breadcrumbs:
 		</div>
 	</div>
 </div>
-
-
 
 
 <h2>Getting there together: The Canada Green Buildings Strategy</h2>
