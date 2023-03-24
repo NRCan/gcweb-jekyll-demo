@@ -23,7 +23,7 @@ breadcrumbs:
 		<img src="https://www.nrcan.gc.ca/sites/nrcan/files/engagements/green-building-strategy/Full-banner_greenbuilding.jpg" alt="Green buildings banner" class="img-responsive">		
 	</div>
 	<div class="col-sm-6 col-sm-pull-6">
-		<p>	[NRCan Snippets](snippets/) Our homes and buildings are where we live, work, study and gather. They are important to our well-being, a strong economy and as spaces for people to gather and interact.</p>		
+		<p><a href="snippets/">NRCan Snippets</a> Our homes and buildings are where we live, work, study and gather. They are important to our well-being, a strong economy and as spaces for people to gather and interact.</p>		
 	</div>	
 </div>
 
