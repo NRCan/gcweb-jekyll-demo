@@ -6,9 +6,6 @@ description: "Home page describing all the components of the Canada.ca theme, na
 layout: home
 language: en
 breadcrumbs:
-  - canada:
-    title: Canada.ca
-    link: https://www.canada.ca/en.html
   - nrcan:
     title: Natural Resources Canada
     link: https://www.nrcan.gc.ca/home
