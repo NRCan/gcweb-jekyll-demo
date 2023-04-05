@@ -107,6 +107,8 @@ defaults:
       #noFooterMain : true      # turn off the main blue menu
       #noFooterCorporate: true  # turn off links in the footer grey menu (except T&C, Privacy)
       layout: default
+      #Metadata
+      creator: Natural Resources Canada
       css:
         - href: https://natural-resources.canada.ca/sites/all/themes/canadaca/css/nrcan.css
       #  - href: https://use.fontawesome.com/releases/v5.15.4/css/all.css
