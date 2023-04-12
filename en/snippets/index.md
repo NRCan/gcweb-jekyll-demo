@@ -26,4 +26,6 @@ These are elements that could be used anywhere in a apge
 These are larger reference implmentations of whole pages or page elements
 
 - [By the numbers](./by-the-numbers.html)
+- [Stretched links](./stretched_links.html)
 - [Filter Tags](./filtertags.html) - Note that this isn't quite working and could use some extra styling.
+- [Steps](./steps.html)
