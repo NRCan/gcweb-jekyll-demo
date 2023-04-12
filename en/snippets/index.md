@@ -19,6 +19,7 @@ breadcrumbs:
 These are elements that could be used anywhere in a apge
 
 - [Coloured Wells](./coloured_wells.html)
+- [Greener Homes Brand Colours](./greener_homes.html)
 - ...
 
 ## Templates
