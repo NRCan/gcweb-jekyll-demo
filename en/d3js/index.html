@@ -37,22 +37,25 @@ breadcrumbs:
 <button class="update-btn" data-chart-update="var2">Variable 2</button>
 
 <!-- Create a div where the graph will take place -->
+<div id="spinner"></div>
 <div id="svg-container"></div>
     
 <script>
-var draw_chart = function(event) { 
-  // set the dimensions and margins of the graph
-  const margin = {top: 30, right: 30, bottom: 70, left: 60},
-      width = 460 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+(function(){
 
-  // append the svg object to the body of the page
-  var svg = d3.select("#svg-container")
-    .append("svg")
-    .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 800 800")
-    .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+  var draw_chart = function(event) {
+    // set the dimensions and margins of the graph
+    const margin = {top: 30, right: 30, bottom: 70, left: 60},
+        width = 460 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#svg-container")
+                .append("svg")
+                .attr("preserveAspectRatio", "xMinYMin meet")
+                .attr("viewBox", "0 0 800 800")
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
 
     svg.append('text')
         .attr('class', 'label')
@@ -70,70 +73,84 @@ var draw_chart = function(event) {
         .attr('text-anchor', 'middle')
         .style("font-size", "12px")
         .text('Year')
-    
-  // Initialize the X axis
-  const x = d3.scaleBand()
-    .range([ 0, width ])
-    .padding(0.2);
-  const xAxis = svg.append("g")
-    .attr("transform", `translate(0,${height})`);
+      
+    // Initialize the X axis
+    const x = d3.scaleBand()
+      .range([ 0, width ])
+      .padding(0.2);
+    const xAxis = svg.append("g")
+      .attr("transform", `translate(0,${height})`);
 
-  // Initialize the Y axis
-  const y = d3.scaleLinear()
-    .range([ height, 0]);
-  const yAxis = svg.append("g")
-    .attr("class", "myYaxis");
+    // Initialize the Y axis
+    const y = d3.scaleLinear()
+      .range([ height, 0]);
+    const yAxis = svg.append("g")
+      .attr("class", "myYaxis");
 
+    // A function that create / update the plot for a given variable:
+    var update = function(selectedVar) {
 
-  // A function that create / update the plot for a given variable:
-  var update = function(selectedVar) {
+      // Turn on spinner if data not loaded
+      var spinner = $("#spinner");
+      if (!spinner.hasClass('initialized')) {
+        spinner.text('Data Loading....');
+      }
 
-    // Parse the Data
-    d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/barplot_change_data.csv").then( function(data) {
+      // Parse the Data
+      d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/barplot_change_data.csv").then( function(data) {
 
-      // X axis
-      x.domain(data.map(d => d.group));
-      xAxis.transition().duration(1000).call(d3.axisBottom(x));
+        // Turn off spinner
+        if (!spinner.hasClass('initialized')) {
+          spinner.text('').addClass('initialized');
+        }
 
-      // Add Y axis
-      y.domain([0, d3.max(data, d => +d[selectedVar]) ]);
-      yAxis.transition().duration(1000).call(d3.axisLeft(y));
+        // X axis
+        x.domain(data.map(d => d.group));
+        xAxis.transition().duration(1000).call(d3.axisBottom(x));
 
-      // variable u: map data to existing bars
-      const u = svg.selectAll("rect")
-                   .data(data)
+        // Add Y axis
+        y.domain([0, d3.max(data, d => +d[selectedVar]) ]);
+        yAxis.transition().duration(1000).call(d3.axisLeft(y));
 
-      // update bars
-      u.join("rect")
-        .transition()
-        .duration(1000)
+        // variable u: map data to existing bars
+        const u = svg.selectAll("rect")
+                     .data(data);
+
+        // update bars
+        u.join("rect")
+          .transition()
+          .duration(1000)
           .attr("x", d => x(d.group))
           .attr("y", d => y(d[selectedVar]))
           .attr("width", x.bandwidth())
           .attr("height", d => height - y(d[selectedVar]))
           .attr("fill", "steelblue")
-    })
+      });
+
+      //return svg;
+    }
+
+    // Add event handler to the buttons
+    document.addEventListener('click', function (event) {
+      // If the clicked element doesn't have the right selector, bail
+      if (!event.target.matches('.update-btn')) return;
+
+      var data_value = event.target.getAttribute("data-chart-update");
+      update(data_value);
+
+      // Don't follow the link
+      event.preventDefault();
+    }, false);
+
+    // Initialize plot
+    update('var1');
 
   }
 
-  // Add event handler to the buttons
-  document.addEventListener('click', function (event) {
-    // If the clicked element doesn't have the right selector, bail
-    if (!event.target.matches('.update-btn')) return;
+  var myChart;
+  // Delay execution until loaded
+  document.addEventListener("DOMContentLoaded", function(event){ myChart = draw_chart(event); });
 
-    var data_value = event.target.getAttribute("data-chart-update");
-    update(data_value);
-
-    // Don't follow the link
-    event.preventDefault();
-  }, false);
-
-  // Initialize plot
-  update('var1');
-
-}
-
-// Delay execution until loaded
-document.addEventListener("DOMContentLoaded", draw_chart);
+})();
 
 </script>
