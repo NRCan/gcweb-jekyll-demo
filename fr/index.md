@@ -3,7 +3,7 @@ title: Test Jekyll de RNCan
 altLangPage: /en/
 dateModified: 2022-11-08
 description: "Page d'accueil décrivant l'ensemble des composants du thème de Canada.ca, nommé GCWeb."
-layout: no-container
+layout: home
 language: fr
 breadcrumbs:
   - rncan:

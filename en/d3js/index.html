@@ -1,0 +1,127 @@
+---
+title: Test page D3 JS
+altLangPage: /fr/snippets/
+dateModified: 2023-04-05
+layout: default
+language: en
+script:
+  - https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.4/d3.min.js
+
+breadcrumbs:
+  - nrcan:
+    title: Natural Resources Canada
+    link: https://www.nrcan.gc.ca/home
+  - home:
+    title: Jekyl Site
+    link: /en/
+  - home:
+    title: Snippets
+    link: /en/snippets/
+---
+
+    <h2 class="mrgn-tp-md">We are just testing</h2>
+
+
+<style>
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+</style>
+
+<!-- Add 2 buttons -->
+<button onclick="update('var1')">Variable 1</button>
+<button onclick="update('var2')">Variable 2</button>
+
+<!-- Create a div where the graph will take place -->
+<div id="svg-container"></div>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+
+// set the dimensions and margins of the graph
+const margin = {top: 30, right: 30, bottom: 70, left: 60},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#svg-container")
+  .append("svg")
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", "0 0 800 800")
+  .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  svg.append('text')
+      .attr('class', 'label')
+      .attr('x', - height / 2)
+      .attr('y', -30 )
+      .attr('transform', 'rotate(-90)')
+      .attr('text-anchor', 'middle')
+      .style("font-size", "12px")
+      .text('Value')
+  
+  svg.append('text')
+      .attr('class', 'label')
+      .attr('x', width / 2)
+      .attr('y', height + 30)
+      .attr('text-anchor', 'middle')
+      .style("font-size", "12px")
+      .text('Year')
+  
+// Initialize the X axis
+const x = d3.scaleBand()
+  .range([ 0, width ])
+  .padding(0.2);
+const xAxis = svg.append("g")
+  .attr("transform", `translate(0,${height})`);
+
+// Initialize the Y axis
+const y = d3.scaleLinear()
+  .range([ height, 0]);
+const yAxis = svg.append("g")
+  .attr("class", "myYaxis");
+
+
+// A function that create / update the plot for a given variable:
+function update(selectedVar) {
+
+  // Parse the Data
+  d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/barplot_change_data.csv").then( function(data) {
+
+    // X axis
+    x.domain(data.map(d => d.group));
+    xAxis.transition().duration(1000).call(d3.axisBottom(x));
+
+    // Add Y axis
+    y.domain([0, d3.max(data, d => +d[selectedVar]) ]);
+    yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+    // variable u: map data to existing bars
+    const u = svg.selectAll("rect")
+      .data(data)
+
+    // update bars
+    u.join("rect")
+      .transition()
+      .duration(1000)
+        .attr("x", d => x(d.group))
+        .attr("y", d => y(d[selectedVar]))
+        .attr("width", x.bandwidth())
+        .attr("height", d => height - y(d[selectedVar]))
+        .attr("fill", "steelblue")
+  })
+
+}
+
+// Initialize plot
+update('var1')
+
+});
+
+</script>
