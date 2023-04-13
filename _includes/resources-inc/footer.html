@@ -1,0 +1,20 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+<script src="{{ setting-resourcesBasePathWetboew }}/js/wet-boew{{ setting-minifiedSuffix }}.js"></script>
+<script src="{{ setting-resourcesBasePathTheme }}/js/theme{{ setting-minifiedSuffix }}.js"></script>
+{%- if page.script.first -%}
+	{%- for js in page.script -%}
+        {%- if js.href and js.integrity -%}
+            <script src="{{ js.href }}" integrity="{{ js.integrity }}" crossorigin="anonymous"></script>
+        {%- elsif js.href -%}
+            <script src="{{ js.href }}"></script>
+        {%- else -%}
+    		<script src="{{ js }}"></script>
+        {%- endif -%}
+	{%- endfor -%}
+{%- elsif page.script -%}
+	<script src="{{ page.script }}"></script>
+{%- endif -%}
+
+
+integrity

@@ -35,10 +35,10 @@
 <div class="row wb-eqht-grd">
 	<section class="col-sm-6 text-sm-right">
 		<h2 class="hght-inhrt h4">NRCan Jekyll Test</h2>
-		<p><a href="/en/" class="btn btn-primary">English</a></p>
+		<p><a href="en/" class="btn btn-primary">English</a></p>
 	</section>
 		<section class="col-sm-6" lang="fr">
 		<h2 class="hght-inhrt h4">Test Jekyll de RNCan</h2>
-		<p><a href="/fr/" class="btn btn-primary">Français</a></p>
+		<p><a href="fr/" class="btn btn-primary">Français</a></p>
 	</section>
 </div>

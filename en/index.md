@@ -3,16 +3,12 @@ title: NRCan Jekyll Test
 altLangPage: /fr/
 dateModified: 2022-11-08
 description: "Home page describing all the components of the Canada.ca theme, named GCWeb."
-layout: no-container
+layout: home
 language: en
 breadcrumbs:
   - nrcan:
     title: Natural Resources Canada
     link: https://www.nrcan.gc.ca/home
-  - oee:
-    title: Energy Efficiency
-    link: https://www.nrcan.gc.ca/energy-efficiency/10832
-
 ---
 
 {::nomarkdown}
@@ -24,7 +20,7 @@ breadcrumbs:
 		<img src="https://www.nrcan.gc.ca/sites/nrcan/files/engagements/green-building-strategy/Full-banner_greenbuilding.jpg" alt="Green buildings banner" class="img-responsive">		
 	</div>
 	<div class="col-sm-6 col-sm-pull-6">
-		<p>Our homes and buildings are where we live, work, study and gather. They are important to our well-being, a strong economy and as spaces for people to gather and interact.</p>		
+		<p><a href="snippets/">NRCan Snippets</a> Our homes and buildings are where we live, work, study and gather. They are important to our well-being, a strong economy and as spaces for people to gather and interact.</p>		
 	</div>	
 </div>
 
@@ -47,8 +43,6 @@ breadcrumbs:
 		</div>
 	</div>
 </div>
-
-
 
 <h2>Green buildings by 2050</h2>
 
@@ -82,8 +76,6 @@ breadcrumbs:
 		</div>
 	</div>
 </div>
-
-
 
 
 <h2>Getting there together: The Canada Green Buildings Strategy</h2>

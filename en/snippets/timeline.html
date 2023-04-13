@@ -1,0 +1,162 @@
+---
+title: NRCan Timeline
+altLangPage: /fr/snippets/
+dateModified: 2023-03-24
+layout: default
+language: en
+breadcrumbs:
+  - nrcan:
+    title: Natural Resources Canada
+    link: https://www.nrcan.gc.ca/home
+  - home:
+    title: Jekyl Site
+    link: /en/
+  - home:
+    title: Snippets
+    link: /en/snippets/
+---
+
+<p>
+  Select a colour set:
+  <select name="select1" id="select1">
+    <option value="list_timeline" selected>Default</option>
+    <option value="list_timeline blue">Dark Blue</option>
+    <option value="list_timeline blue medium">Medium Blue</option>
+    <option value="list_timeline blue light">Light Blue</option>
+    <option value="list_timeline grey">Grey</option>
+    <option value="list_timeline beige">Beige</option>
+    <option value="list_timeline black">Black</option>
+    <option value="list_timeline white">White</option>
+  </select>
+</p>
+<p>Use this class on your list: <span id="display" style="font-weight: bold;"></span></p>
+
+<script>
+  (function($) {
+
+    $("#select1").change(function() {
+      var value = $(this).val();
+      $('.list_timeline').removeClass().addClass(value);
+      $('#display').text(value);
+    }).trigger('change');
+
+  })(jQuery);
+</script>
+
+<div id="lists" class="row">
+  <div class="col-sm-6">
+    <h2>Unordered List</h2>
+    <ul class="list_timeline blue">
+      <li>
+        <h2>HEADER 2</h2>
+
+        <p>stuff</p>
+
+        <p>More stuff here blah blah</p>
+      </li>
+      <li>
+        <h3>header 3</h3>
+
+        <ul>
+          <li>Nested UL</li>
+          <li>And&nbsp;more stuff</li>
+        </ul>
+      </li>
+      <li>
+        <p><a href="#">link 1</a></p>
+      </li>
+      <li>
+        <p><a href="#2">link 2</a></p>
+      </li>
+      <li>
+        <p><a href="#3">link 3</a></p>
+      </li>
+      <li>
+        <p>text 1</p>
+        <ol>
+          <li>Nested OL</li>
+          <li>And&nbsp;more stuff</li>
+        </ol>
+      </li>
+      <li>
+        <p>text 2</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-sm-6">
+    <h2>Ordered List</h2>
+    <ol class="list_timeline blue">
+      <li>
+        <h2>HEADER 2</h2>
+
+        <p>stuff</p>
+
+        <p>More stuff here blah blah</p>
+      </li>
+      <li>
+        <h3>header 3</h3>
+
+        <ol>
+          <li>Nested OL</li>
+          <li>And&nbsp;more stuff</li>
+        </ol>
+      </li>
+      <li>
+        <p><a href="#">link 1</a></p>
+      </li>
+      <li>
+        <p><a href="#2">link 2</a></p>
+      </li>
+      <li>
+        <p><a href="#3">link 3</a></p>
+      </li>
+      <li>
+        <p>text 1</p>
+        <ul>
+          <li>Nested UL</li>
+          <li>And&nbsp;more stuff</li>
+        </ul>
+      </li>
+      <li>
+        <p>text 2</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+      <li>
+        <p>text 3</p>
+      </li>
+    </ol>
+  </div>
+</div>
