@@ -14,7 +14,6 @@ breadcrumbs:
     link: /en/
 ---
 
-
 ## Features
 These are elements that could be used anywhere in a apge
 
