@@ -19,9 +19,10 @@ breadcrumbs:
 These are elements that could be used anywhere in a apge
 
 - [Coloured Wells](./coloured_wells.html)
-- [Greener Homes Brand Colours](./greener_homes.html)
-- [Custom Colours](./custom_colours.html)
-- ...
+- [WET Ajax Append](./ajax_append.html)
+- [Bootstrap Cards](./bootstrap_cards.html)
+- [Stretched links](./stretched_links.html)
+- [WET Ajax Append](./ajax_append.html)
 
 ## Templates
 These are larger reference implmentations of whole pages or page elements
@@ -30,3 +31,15 @@ These are larger reference implmentations of whole pages or page elements
 - [Stretched links](./stretched_links.html)
 - [Filter Tags](./filtertags.html) - Note that this isn't quite working and could use some extra styling.
 - [Steps](./steps.html)
+- [Print button](./print_button.html)
+- [Rounded corners](./rounded_corners.html)
+- [NRCan Steps](./steps.html)
+- [NRCan Timeline](./timeline.html)
+
+## Sector specific
+These are elements that could be used for specific sectors/sections
+
+- [Custom Colours](./custom_colours.html)
+- [Greener Homes Brand Colours](./greener_homes.html)
+- [Simply Science](./simply_science.html)
+- [Simply Science - Social Links](./ss_socialmedia.html)
