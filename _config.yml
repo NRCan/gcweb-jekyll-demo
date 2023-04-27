@@ -111,9 +111,7 @@ defaults:
       creator: Natural Resources Canada
       css:
         - href: https://natural-resources.canada.ca/sites/all/themes/canadaca/css/nrcan.css?dd6fghdf
-        - href: https://natural-resources.canada.ca/sites/all/modules/nrcan/theme_upgrades/css/cards.css?4gwgs5gds
-      #  - href: https://use.fontawesome.com/releases/v5.15.4/css/all.css
-      #    integrity: sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm   
+        - href: /gcweb-jekyll-demo/assets/css/cards.css
       script:
         - href: https://kit.fontawesome.com/555e329793.js
       #    integrity: sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc
