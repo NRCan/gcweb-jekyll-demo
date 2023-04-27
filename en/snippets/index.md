@@ -15,8 +15,10 @@ breadcrumbs:
 ---
 
 ## Features
-These are elements that could be used anywhere in a apge
+These are elements that could be used anywhere in a page
 
+- [Borders, Cards and Grids](./borders-cards-grids.html)
+- [Details - Colour](./detail-colour.html)
 - [Coloured Wells](./coloured_wells.html)
 - [WET Ajax Append](./ajax_append.html)
 - [Bootstrap Cards](./bootstrap_cards.html)
