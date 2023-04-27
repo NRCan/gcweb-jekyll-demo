@@ -17,7 +17,7 @@ breadcrumbs:
 ## Features
 These are elements that could be used anywhere in a page
 
-- [Borders, Cards and Grids](./borders-cards-grids.html)
+- [Borders, Cards, Grids and Fone Awesome](./borders-cards-grids.html)
 - [Details - Colour](./detail-colour.html)
 - [Coloured Wells](./coloured_wells.html)
 - [WET Ajax Append](./ajax_append.html)
