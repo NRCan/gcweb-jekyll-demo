@@ -32,15 +32,14 @@ breadcrumbs:
 <p>Use this class on your list: <span id="display" style="font-weight: bold;"></span></p>
 
 <script>
-  (function($) {
-
+	window.onload = function() {
+		
     $("#select1").change(function() {
       var value = $(this).val();
       $('.list_timeline').removeClass().addClass(value);
       $('#display').text(value);
     }).trigger('change');
-
-  })(jQuery);
+	}
 </script>
 
 <div id="lists" class="row">
