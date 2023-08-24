@@ -23,7 +23,6 @@ These are elements that could be used anywhere in a page
 - [WET Ajax Append](./ajax_append.html)
 - [Bootstrap Cards](./bootstrap_cards.html)
 - [Stretched links](./stretched_links.html)
-- [WET Ajax Append](./ajax_append.html)
 
 ## Templates
 These are larger reference implmentations of whole pages or page elements
