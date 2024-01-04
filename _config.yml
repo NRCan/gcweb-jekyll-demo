@@ -110,7 +110,7 @@ defaults:
       #Metadata
       creator: Natural Resources Canada
       css:
-        - href: https://natural-resources.canada.ca/sites/all/themes/canadaca/css/nrcan.css?dfsdfs
+        - href: https://natural-resources.canada.ca/sites/all/themes/canadaca/css/nrcan.css?yjsrmd
         - href: /gcweb-jekyll-demo/assets/css/cards.css
       script:
         - href: https://kit.fontawesome.com/555e329793.js
