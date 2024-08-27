@@ -1,0 +1,56 @@
+---
+title: Legally legislated lists
+altLangPage: /fr/snippets/
+dateModified: 2024-08-27
+layout: default
+language: en
+breadcrumbs:
+  - nrcan:
+    title: Natural Resources Canada
+    link: https://www.nrcan.gc.ca/home
+  - home:
+    title: Jekyl Site
+    link: /en/
+  - home:
+    title: Snippets
+    link: /en/snippets/
+---
+
+<h2>Legal Lists</h2>
+ <p>when a client has legally legislated lists that refer to legal documents, we can use these classes that provide specific styling with brackets on either side for english and brackets on one side for french.<p>
+<h3>Example from Hydrogen Tech Guide below :</p>
+<ol class="lwr-brack-alpha">
+	<li><cite>is acquired by a qualifying taxpayer and becomes available for use in respect of a qualified clean hydrogen project of the taxpayer in Canada on or after March 28, 2023</cite>;</li>
+	<li><cite>has not been used, or acquired for use or lease, by any person or partnership for any purpose whatever before it was acquired by the taxpayer; and</cite></li>
+	<li><cite>is property situated in Canada</cite>
+		<ol class="lwr-brack-rmnmrl">
+			<li><cite>that is used all or substantially all to produce hydrogen through electrolysis of water, including electrolysers, rectifiers, purification equipment, water treatment and conditioning equipment and equipment used for hydrogen compression and storage</cite>,</li>
+			<li><cite>that is used all or substantially all to produce hydrogen from <strong>eligible hydrocarbons</strong>, including pre-reformers, auto-thermal reformers, steam methane reformers, pre-heating equipment, syngas coolers, shift reactors, purification equipment, fired heaters, water treatment and conditioning equipment, equipment used in hydrogen compression and storage of hydrogen, oxygen production equipment and methanators</cite>,</li>
+			<li><cite>that is</cite>
+				<ol class="upr-brack-alpha">
+					<li><cite>clean ammonia equipment</cite>,</li>
+					<li><cite>dual-use electricity and heat equipment</cite>,</li>
+					<li><cite>dual-use hydrogen and ammonia equipment, or</cite></li>
+					<li><cite>project support equipment</cite>,</li>
+				</ol>
+			</li>
+			<li><cite>that is physically and functionally integrated with the equipment described in any of subparagraphs (i) to (iii) and that is ancillary equipment used solely to support the functioning of equipment described in any of subparagraphs (i) to (iii) within a hydrogen or ammonia production process as part of</cite>
+				<ol class="upr-brack-alpha">
+					<li><cite>an electrical system</cite>,</li>
+					<li><cite>a feed supply system</cite>,</li>
+					<li><cite>a fuel supply system</cite>,</li>
+					<li><cite>a liquid delivery and distribution system</cite>,</li>
+					<li><cite>a cooling system</cite>,</li>
+					<li><cite>a process material storage and handling and distribution system</cite>,</li>
+					<li><cite>a process venting system</cite>,</li>
+					<li><cite>a process waste management system, or</cite></li>
+	<li><cite>a utility air or nitrogen distribution system</cite>,</li>
+
+				</ol>
+	<li><cite>that is equipment used for system safety and integrity, or as part of a control or monitoring system, solely to support the equipment described in any of subparagraphs (i) to (iv), or</cite></li>
+	<li><cite>that is property used solely to convert another property that would not otherwise be described in subparagraphs (i) to (v) if the conversion causes the other property to satisfy the description in any of subparagraphs (i) to (v)</cite>.</li>
+			</li>
+		</ol>
+	</li>
+
+</ol>
