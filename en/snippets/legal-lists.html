@@ -15,7 +15,224 @@ breadcrumbs:
     title: Snippets
     link: /en/snippets/
 ---
-
+<style>
+/* Base styles for all lists */
+.lwr-brack-alpha,
+.upr-brack-alpha,
+.lwr-brack-rmnmrl,
+.lwr-brack-fwrd-alpha {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  counter-reset: list-counter; /* Initialize counter */
+}
+ 
+/* Ensure list items are positioned correctly */
+.lwr-brack-alpha li,
+.upr-brack-alpha li,
+.lwr-brack-rmnmrl li,
+.lwr-brack-fwrd-alpha li {
+  position: relative;
+  margin-bottom: 0.5em;
+  padding-left: 2em; /* Space for the bullet */
+  text-indent: 0; /* Align text properly */
+}
+ 
+/* Before pseudo-elements for list markers with italics */
+.lwr-brack-alpha li::before,
+.upr-brack-alpha li::before,
+.lwr-brack-rmnmrl li::before,
+.lwr-brack-fwrd-alpha li::before {
+  position: absolute;
+  left: 0; /* Align the bullet to the left */
+  width: 2em; /* Space for the bullet */
+  text-align: right; /* Align text to the right */
+  margin-right: 0.5em; /* Space between marker and text */
+  counter-increment: list-counter; /* Increment counter */
+  font-style: italic; /* Italicize the marker */
+}
+ 
+/* Specific content for each list type with a non-breaking space */
+.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+/* Ensure each list style is applied independently */
+.lwr-brack-alpha ol,
+.upr-brack-alpha ol,
+.lwr-brack-rmnmrl ol,
+.lwr-brack-fwrd-alpha ol {
+  padding-left: 2em; /* Indent nested lists */
+  list-style-type: none; /* Remove default list style */
+}
+ 
+/* Ensure specific class styles for nested lists */
+.lwr-brack-alpha ol {
+  counter-reset: list-counter; /* Reset counter for nested lists */
+}
+ 
+.upr-brack-alpha ol {
+  counter-reset: list-counter; /* Reset counter for nested lists */
+}
+ 
+.lwr-brack-rmnmrl ol {
+  counter-reset: list-counter; /* Reset counter for nested lists */
+}
+ 
+.lwr-brack-fwrd-alpha ol {
+  counter-reset: list-counter; /* Reset counter for nested lists */
+}
+ 
+/* Override markers for nested lists to ensure proper display */
+.lwr-brack-alpha ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-alpha ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-alpha ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.lwr-brack-alpha ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+/* Third level of nested lists should not inherit the parent class */
+.lwr-brack-alpha ol ol,
+.upr-brack-alpha ol ol,
+.lwr-brack-rmnmrl ol ol,
+.lwr-brack-fwrd-alpha ol ol {
+  padding-left: 2em; /* Indent nested lists */
+  list-style-type: none; /* Remove default list style */
+}
+ 
+.lwr-brack-alpha ol ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-alpha ol ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-alpha ol ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.lwr-brack-alpha ol ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.upr-brack-alpha ol ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.lwr-brack-rmnmrl ol ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol ol.lwr-brack-alpha li::before {
+  content: "(" counter(list-counter, lower-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol ol.upr-brack-alpha li::before {
+  content: "(" counter(list-counter, upper-alpha) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol ol.lwr-brack-rmnmrl li::before {
+  content: "(" counter(list-counter, lower-roman) ")" "\00a0";
+}
+ 
+.lwr-brack-fwrd-alpha ol ol.lwr-brack-fwrd-alpha li::before {
+  content: counter(list-counter, lower-alpha) ")" "\00a0";
+}
+</style>
 <h2>Legal Lists</h2>
  <p>when a client has legally legislated lists that refer to legal documents, we can use these classes that provide specific styling with brackets on either side for english and brackets on one side for french.<p>
 <h3>Example from Hydrogen Tech Guide below :</h3>
